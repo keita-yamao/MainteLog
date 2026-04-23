@@ -14,15 +14,35 @@ INSERT INTO locations (location) VALUES
 
 CREATE TABLE IF NOT EXISTS makers (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    maker VARCHAR(255) NOT NULL
+    maker VARCHAR(255) NOT NULL,
+    address VARCHAR(255)
+    );
+
+INSERT INTO makers (maker, address) VALUES
+('ロジステクノス', '東京都港区'),
+('三和テクノロジー', '大阪府箕面市'),
+('大和技研工業', '奈良県大和高田市'),
+('讃岐製作所', '香川県高松市'),
+('富士機械', '静岡県浜松市');
+
+CREATE TABLE IF NOT EXISTS contacts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    maker_id INT,
+    contact_person VARCHAR(255),
+    phone_number VARCHAR(20),
+    email VARCHAR(255),
+    FOREIGN KEY (maker_id) REFERENCES makers(id)
 );
 
-INSERT INTO makers (maker) VALUES
-('ロジステクノス'),
-('三和テクノロジー'),
-('大和技研工業'),
-('讃岐製作所'),
-('富士機械');
+INSERT INTO contacts (maker_id, contact_person, phone_number, email) VALUES
+(1, '田中太郎', '090-1234-5678', 'tanaka@example.com'),
+(2, '佐藤花子', '080-2345-6789', 'satou@example.com'),
+(3, '鈴木一郎', '070-3456-7890', 'suzuki@example.com'),
+(4, '高橋次郎', '060-4567-8901', 'takahashi@example.com'),
+(5, '山田三郎', '050-5678-9012', 'yamada@example.com'),
+(1, '田中花子', '090-8765-4321', 'tanaka-hana@example.com'),
+(2, '佐藤太郎', '080-9876-5432', 'satou-taro@example.com'),
+(3, '鈴木花子', '070-8765-4321', 'suzuki-hana@example.com');
 
 CREATE TABLE IF NOT EXISTS machines (
     id INT AUTO_INCREMENT PRIMARY KEY,

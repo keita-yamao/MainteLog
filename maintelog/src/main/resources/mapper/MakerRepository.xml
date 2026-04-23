@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.github.keita_yamao.maintelog.repository.MakersRepository">
+
+<!-- メーカー情報の全件検索 -->
+<select id="searchMakers" resultType="io.github.keita_yamao.maintelog.data.Maker">
+    SELECT * FROM makers
+</select>
+
+<!-- メーカーIDに基づく検索 -->
+<select id="searchMakerById" parameterType="int" resultType="io.github.keita_yamao.maintelog.data.Maker">
+    SELECT * FROM makers WHERE id = #{id}
+</select>
+
+</mapper>
