@@ -9,14 +9,14 @@ const menuData = [
 function loadSidebar() {
     // サイドバーのコンテナをIDから取得
     const sidebarContainer = document.getElementById("sidebar-list");
-    // コンテナが存在しない場合はエラーメッセージを表示して終了
+    // コンテナが存在しない場合はエラーログを表示して終了
     if (!sidebarContainer) {
         console.error("サイドバーのコンテナが見つかりません。");
         return;
     }
     // メニューアイテムのHTMLを生成
     const menuHtml = menuData.map(item => `
-                            <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link text-dark" href="${item.url}">
                                 <i class="bi ${item.icon} me-2"></i>
                                 ${item.name}
