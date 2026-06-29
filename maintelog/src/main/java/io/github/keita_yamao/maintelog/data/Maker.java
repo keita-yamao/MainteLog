@@ -1,5 +1,4 @@
 package io.github.keita_yamao.maintelog.data;
-
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Size;
 import lombok.Value;
@@ -15,4 +14,10 @@ public class Maker {
     @Schema(description = "住所", example = "東京都港区○○")
     @Size(max = 255)
     private String address;
+    @Schema(description = "電話番号", example = "03-1234-5678")
+    @Size(max = 20)
+    private String tell;
+    @Schema(description = "FAX番号", example = "03-1234-5679")
+    @Size(max = 20)
+    private String fax;
 }
