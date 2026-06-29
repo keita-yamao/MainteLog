@@ -15,15 +15,17 @@ INSERT INTO locations (location) VALUES
 CREATE TABLE IF NOT EXISTS makers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     maker VARCHAR(255) NOT NULL,
-    address VARCHAR(255)
+    address VARCHAR(255),
+    tell VARCHAR(20),
+    fax VARCHAR(20)
     );
 
-INSERT INTO makers (maker, address) VALUES
-('ロジステクノス', '東京都港区'),
-('三和テクノロジー', '大阪府箕面市'),
-('大和技研工業', '奈良県大和高田市'),
-('讃岐製作所', '香川県高松市'),
-('富士機械', '静岡県浜松市');
+INSERT INTO makers (maker, address, tell, fax) VALUES
+('ロジステクノス', '東京都港区', '03-1234-5678', '03-1234-5679'),
+('三和テクノロジー', '大阪府箕面市', '06-2345-6789', '06-2345-6788'),
+('大和技研工業', '奈良県大和高田市', '0742-3456-7890', '0742-3456-7891'),
+('讃岐製作所', '香川県高松市', '087-4567-8901', '087-4567-8902'),
+('富士機械', '静岡県浜松市', '054-5678-9012', '054-5678-9013');
 
 CREATE TABLE IF NOT EXISTS contacts (
     id INT AUTO_INCREMENT PRIMARY KEY,

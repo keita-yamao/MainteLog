@@ -1,3 +1,7 @@
 .sidebar{
     min-height: calc(100vh - 50px);
 }
+
+.main-container{
+    top: 0;
+}
