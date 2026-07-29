@@ -6,7 +6,7 @@ apt-get install -y openjdk-21-jdk mysql-client && \
 apt-get clean && \
 rm -rf /var/lib/apt/lists/*
 
-ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-arm64
+ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 ENV PATH=$JAVA_HOME/bin:$PATH
 
 WORKDIR /workspace
