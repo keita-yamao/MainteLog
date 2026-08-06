@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.github.keita_yamao.maintelog.repository.MachinesRepository">
+
+    <!-- 機械情報の全件検索 -->
+    <select id="searchMachines" resultType="io.github.keita_yamao.maintelog.data.Machine">
+        SELECT * FROM machines
+    </select>
+
+    <!-- 機械IDに基づく検索 -->
+    <select id="searchMachineById" parameterType="int" resultType="io.github.keita_yamao.maintelog.data.Machine">
+        SELECT * FROM machines WHERE id = #{id}
+    </select>
+
+    <!-- ロケーションIDに基づく検索 -->
+    <select id="searchMachinesByLocationId" parameterType="int" resultType="io.github.keita_yamao.maintelog.data.Machine">
+        SELECT * FROM machines WHERE location_id = #{location_id}
+    </select>
+
+    <!-- 機械名に基づく検索 -->
+    <select id="searchMachinesByName" parameterType="string" resultType="io.github.keita_yamao.maintelog.data.Machine">
+        SELECT * FROM machines WHERE machine LIKE CONCAT('%', #{name}, '%')
+    </select>
+
+</mapper>

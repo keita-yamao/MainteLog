@@ -51,18 +51,18 @@ CREATE TABLE IF NOT EXISTS machines (
     location_id INT,
     maker_id INT,
     machine VARCHAR(255) NOT NULL,
-    cost INT,
+    model VARCHAR(255),
     installation_date DATE,
     FOREIGN KEY (location_id) REFERENCES locations(id),
     FOREIGN KEY (maker_id) REFERENCES makers(id)
 );
 
-INSERT INTO machines (location_id, maker_id, machine, cost, installation_date) VALUES
-(1, 1, '荷受け用フォークリフト', 5000000, '2020-01-15'),
-(2, 2, '処理コンベア', 8000000, '2019-05-20'),
-(3, 3, 'ロースター', 12000000, '2021-03-10'),
-(4, 4, '包装機', 15000000, '2018-11-25'),
-(5, 5, '出荷フォークリフト', 3000000, '2020-07-30');
+INSERT INTO machines (location_id, maker_id, machine, model, installation_date) VALUES
+(1, 1, '荷受け用フォークリフト', 'Forklift Model A', '2020-01-15'),
+(2, 2, '処理コンベア', 'Conveyor Model B', '2019-05-20'),
+(3, 3, 'ロースター', 'Roaster Model C', '2021-03-10'),
+(4, 4, '包装機', 'Packing Machine Model D', '2018-11-25'),
+(5, 5, '出荷フォークリフト', 'Loading Forklift Model E', '2020-07-30');
 
 CREATE TABLE IF NOT EXISTS maintenance_logs(
     id INT AUTO_INCREMENT PRIMARY KEY,
